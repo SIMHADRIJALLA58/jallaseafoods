@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#002B5B" />
+    <title>Contact Us | JALLA SEA FOODS</title>
+    <meta name="description" content="Contact JALLA SEA FOODS — fresh seafood supplier from Chirala serving Hyderabad. Phone, WhatsApp, email, address, business hours and enquiry form." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://jallaseafoods.com/contact.html" />
+
+    <meta property="og:title" content="Contact JALLA SEA FOODS" />
+    <meta property="og:description" content="Reach the freshest seafood supplier serving Hyderabad." />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&family=Poppins:wght@400;500;600&family=Inter:wght@600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body data-testid="contact-page">
+
+    <div id="preloader" data-testid="preloader">
+        <div class="preloader-wave"></div>
+        <div class="preloader-text">JALLA SEA FOODS</div>
+    </div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav class="navbar-custom scrolled" data-testid="main-navbar">
+        <div class="container-tight navbar-inner">
+            <a href="/" class="brand" data-testid="brand-link">
+                <span class="brand-mark">J</span>
+                <span class="brand-text">
+                    <span class="brand-name">JALLA SEA FOODS</span>
+                    <span class="brand-tag">Fresh · From The Coast</span>
+                </span>
+            </a>
+            <ul class="nav-menu" data-testid="nav-menu">
+                <li><a href="/" data-testid="nav-home">Home</a></li>
+                <li><a href="/#fish-categories" data-testid="nav-categories">Fish Categories</a></li>
+                <li><a href="/gallery.html" data-testid="nav-gallery">Gallery</a></li>
+                <li><a href="/#about" data-testid="nav-about">About Us</a></li>
+                <li><a href="/#faq" data-testid="nav-faq">FAQ</a></li>
+                <li><a href="/contact.html" data-testid="nav-contact">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a class="btn-call" href="tel:+919701744317" data-testid="nav-call-btn"><i class="fa-solid fa-phone"></i><span>Call Now</span></a>
+                <a class="btn-whats" href="https://wa.me/919701744317" target="_blank" rel="noopener" data-testid="nav-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
+                <button class="hamburger" aria-label="Menu" data-testid="mobile-menu-toggle"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header" data-testid="contact-header">
+        <div class="container-tight">
+            <div class="eyebrow" style="justify-content:center; color:var(--secondary-200);">Say Hello</div>
+            <h1>Contact Us</h1>
+            <div class="breadcrumb-nav"><a href="/">Home</a><span class="sep">/</span>Contact</div>
+        </div>
+    </header>
+
+    <section class="section contact-section" data-testid="contact-section">
+        <div class="container-tight">
+            <div class="contact-grid">
+                <form class="contact-form-card reveal" onsubmit="return submitWhatsApp(this);" data-testid="contact-form">
+                    <h3>Place your enquiry</h3>
+                    <p>We reply on WhatsApp within minutes.</p>
+
+                    <div class="form-field">
+                        <label for="c-name">Name</label>
+                        <input id="c-name" name="name" type="text" required placeholder="Your full name" data-testid="form-name-input" />
+                    </div>
+                    <div class="form-field">
+                        <label for="c-phone">Phone</label>
+                        <input id="c-phone" name="phone" type="tel" required placeholder="10-digit mobile number" data-testid="form-phone-input" />
+                    </div>
+                    <div class="form-field">
+                        <label for="c-location">Location</label>
+                        <input id="c-location" name="location" type="text" placeholder="Area / City" data-testid="form-location-input" />
+                    </div>
+                    <div class="form-field">
+                        <label for="c-req">Requirement</label>
+                        <textarea id="c-req" name="requirement" required placeholder="Which fish, quantity, and when do you need it?" data-testid="form-requirement-input"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit" data-testid="form-submit-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Send on WhatsApp
+                    </button>
+                </form>
+
+                <div class="contact-info-card reveal">
+                    <h3>Reach us directly</h3>
+                    <p>Available 6 AM – 10 PM · All days of the week</p>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <div class="info-label">Phone</div>
+                            <a class="info-value" href="tel:+919701744317" data-testid="info-phone">+91 97017 44317</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <div class="info-label">WhatsApp</div>
+                            <a class="info-value" href="https://wa.me/919701744317" target="_blank" rel="noopener" data-testid="info-whatsapp">+91 97017 44317</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <div class="info-label">Email</div>
+                            <a class="info-value" href="mailto:jallasimhadri@gmail.com" data-testid="info-email">jallasimhadri@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <div class="info-label">Main Branch</div>
+                            <span class="info-value">Vodarevu, Chirala, Andhra Pradesh, India</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <div class="info-label">Business Hours</div>
+                            <span class="info-value">Mon – Sun · 6:00 AM to 10:00 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="map-embed">
+                        <iframe title="JALLA SEA FOODS map" loading="lazy" src="https://www.google.com/maps?q=Vodarevu+Chirala&output=embed"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" data-testid="site-footer">
+        <div class="container-tight">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-row"><span class="brand-mark">J</span><span class="footer-brand-name">JALLA SEA FOODS</span></div>
+                    <p>Premium fresh seafood supplier — Chirala to Hyderabad.</p>
+                    <div class="socials">
+                        <a class="social-btn" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a class="social-btn" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a class="social-btn" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a class="social-btn" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5>Explore</h5>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#fish-categories">Fish Categories</a></li>
+                        <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/#about">About Us</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="/contact.html">Fresh Fish Supply</a></li>
+                        <li><a href="/contact.html">Restaurant Wholesale</a></li>
+                        <li><a href="/contact.html">Hotel Supply</a></li>
+                        <li><a href="/contact.html">Retail Delivery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Quick Contact</h5>
+                    <ul>
+                        <li><i class="fa-solid fa-phone" style="color:var(--secondary-200); margin-right:8px;"></i><a href="tel:+919701744317">+91 97017 44317</a></li>
+                        <li><i class="fa-brands fa-whatsapp" style="color:var(--secondary-200); margin-right:8px;"></i><a href="https://wa.me/919701744317">Chat on WhatsApp</a></li>
+                        <li><i class="fa-solid fa-envelope" style="color:var(--secondary-200); margin-right:8px;"></i><a href="mailto:jallasimhadri@gmail.com">jallasimhadri@gmail.com</a></li>
+                        <li><i class="fa-solid fa-location-dot" style="color:var(--secondary-200); margin-right:8px;"></i>Vodarevu, Chirala, AP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 JALLA SEA FOODS. All rights reserved. Designed with <span class="heart">♥</span> by <strong style="color:#fff">Jalla Techs</strong>.</div>
+        </div>
+    </footer>
+
+    <div class="float-stack" data-testid="floating-actions">
+        <a class="float-btn whats" href="https://wa.me/919701744317" target="_blank" rel="noopener" aria-label="WhatsApp" data-testid="float-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a class="float-btn call" href="tel:+919701744317" aria-label="Call" data-testid="float-call"><i class="fa-solid fa-phone"></i></a>
+        <button class="float-btn top" aria-label="Back to top" data-testid="float-top"><i class="fa-solid fa-arrow-up"></i></button>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
