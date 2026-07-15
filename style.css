@@ -1401,3 +1401,63 @@ img,
 }
 
 }
+
+
+/* Fish Grid Performance */
+.fish-grid{
+    contain: layout paint;
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+}
+
+.fish-card{
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    transition: transform .25s ease;
+}
+
+@media(max-width:768px){
+
+.fish-card{
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.fish-card:hover{
+    transform:none;
+}
+
+}
+
+
+/* FAQ Performance */
+
+.why-section{
+    contain: layout paint;
+    content-visibility:auto;
+    contain-intrinsic-size:700px;
+}
+
+.faq-item{
+    transform:translateZ(0);
+    backface-visibility:hidden;
+}
+
+.faq-a{
+    will-change:max-height;
+}
+
+@media(max-width:768px){
+
+.reveal{
+    opacity:1 !important;
+    transform:none !important;
+    transition:none !important;
+}
+
+.reveal.in{
+    opacity:1;
+    transform:none;
+}
+
+}
