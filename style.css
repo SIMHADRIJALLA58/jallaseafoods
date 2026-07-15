@@ -1352,3 +1352,37 @@ h1, h2, h3, h4, .display-heading {
 /* Emergent badge lift for FABs */
 #emergent-badge { bottom: 90px !important; right: 16px !important; }
 @media (max-width: 480px) { #emergent-badge { display: none !important; } }
+
+
+
+
+
+/* Improve mobile rendering */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* GPU acceleration */
+.hero,
+.hero-bg,
+.hero-overlay,
+.section,
+img,
+.card,
+.fish-card,
+.about-image-wrap,
+.swiper-slide {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+}

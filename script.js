@@ -98,10 +98,10 @@
         if (!el || typeof Swiper === "undefined") return;
         new Swiper(el, {
             loop: true,
-            speed: 1400,
+            speed: 600,
             effect: "fade",
             fadeEffect: { crossFade: true },
-            autoplay: { delay: 3000, disableOnInteraction: false },
+            autoplay: { delay: 4500, disableOnInteraction: false },
             pagination: { el: ".hero-swiper .swiper-pagination", clickable: true }
         });
     })();
