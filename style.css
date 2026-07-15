@@ -1534,3 +1534,80 @@ img,
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================================================
+   SERVICES SECTION PERFORMANCE FIX
+   Paste at the END of CSS
+================================================== */
+
+.fish-grid{
+    display:grid;
+    contain:layout paint;
+    content-visibility:auto;
+    contain-intrinsic-size:800px;
+}
+
+.fish-card{
+    transform:none !important;
+    will-change:auto !important;
+    backface-visibility:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.08) !important;
+    transition:box-shadow .2s ease !important;
+}
+
+.fish-card:hover{
+    transform:none !important;
+    box-shadow:0 8px 18px rgba(0,0,0,.12) !important;
+}
+
+.fish-media{
+    overflow:hidden;
+}
+
+.fish-media img{
+    transform:none !important;
+    transition:none !important;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.fish-card:hover .fish-media img{
+    transform:none !important;
+}
+
+.fish-body{
+    contain:content;
+}
+
+.fresh-badge{
+    box-shadow:none !important;
+}
+
+@media(max-width:768px){
+
+.fish-card,
+.fish-media img,
+.fish-body,
+.fish-cta{
+    transition:none !important;
+    animation:none !important;
+}
+
+.fish-card:hover{
+    transform:none !important;
+}
+
+}
