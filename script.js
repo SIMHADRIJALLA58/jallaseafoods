@@ -46,32 +46,32 @@
     })();
 
     /* ---------- Navbar scroll + mobile toggle ---------- */
-    (function navbar() {
-        const nav = document.querySelector(".navbar-custom");
-        const menu = document.querySelector(".nav-menu");
-        const burger = document.querySelector(".hamburger");
-        if (!nav) return;
+    // (function navbar() {
+    //     const nav = document.querySelector(".navbar-custom");
+    //     const menu = document.querySelector(".nav-menu");
+    //     const burger = document.querySelector(".hamburger");
+    //     if (!nav) return;
 
-        function onScroll() {
-            if (window.scrollY > 60) nav.classList.add("scrolled");
-            else nav.classList.remove("scrolled");
-        }
-        window.addEventListener("scroll", onScroll, { passive: true });
-        onScroll();
+    //     function onScroll() {
+    //         if (window.scrollY > 60) nav.classList.add("scrolled");
+    //         else nav.classList.remove("scrolled");
+    //     }
+    //     window.addEventListener("scroll", onScroll, { passive: true });
+    //     onScroll();
 
-        if (burger && menu) {
-            burger.addEventListener("click", () => {
-                burger.classList.toggle("open");
-                menu.classList.toggle("open");
-            });
-            menu.querySelectorAll("a").forEach((a) =>
-                a.addEventListener("click", () => {
-                    burger.classList.remove("open");
-                    menu.classList.remove("open");
-                })
-            );
-        }
-    })();
+    //     if (burger && menu) {
+    //         burger.addEventListener("click", () => {
+    //             burger.classList.toggle("open");
+    //             menu.classList.toggle("open");
+    //         });
+    //         menu.querySelectorAll("a").forEach((a) =>
+    //             a.addEventListener("click", () => {
+    //                 burger.classList.remove("open");
+    //                 menu.classList.remove("open");
+    //             })
+    //         );
+    //     }
+    // })();
 
     /* ---------- Bubbles background ---------- */
     (function bubbles() {
