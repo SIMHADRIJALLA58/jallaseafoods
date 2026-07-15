@@ -554,79 +554,157 @@
 
     <!-- Populate categories + highlights -->
     <script>
-        const FISH_IMAGES = [
-            "images/black.jpg",
-            "images/white.jpg",
-            "images/yellowfin-tuna.jpg",
-            "images/yellowtail-kingfish.jpg",
-            "images/skipjacktuna.jpg",
-            "images/mackerel.jpg",
-            "images/goatfish.jpg",
-            "images/redmullet.jpg",
-            "images/seerfish.jpg",
-            "images/salmon.jpg",
-            "images/grouper.jpg",
-            "images/whitepran.jpg",
-            "images/appollo.jpg",
-            "images/tiger.jpg",
+const FISH_IMAGES = [
+"images/black.jpg",
+"images/white.jpg",
+"images/yellowfin-tuna.jpg",
+"images/yellowtail-kingfish.jpg",
+"images/skipjacktuna.jpg",
+"images/mackerel.jpg",
+"images/goatfish.jpg",
+"images/redmullet.jpg",
+"images/seerfish.jpg",
+"images/salmon.jpg",
+"images/grouper.jpg",
+"images/whitepran.jpg",
+"images/appollo.jpg",
+"images/tiger.jpg"
+];
 
-        ];
-        const FISH_LIST = [
-            { name: "Black Pomfret (నల్ల చందువా)", desc: "Premium black pomfret with soft, flaky meat and rich flavour." },
-    { name: "White Pomfret (తెల్ల చందువా)", desc: "Restaurant-grade white pomfret, prized for its delicate texture." },
-    { name: "Yellowfin Tuna (ఎల్లోఫిన్ ట్యూనా)", desc: "Fresh ocean catch with firm meat, perfect for steaks and grilling." },
-    { name: "Yellowtail Kingfish (యెల్లోటెయిల్ కింగ్ ఫిష్)", desc: "Premium kingfish known for its rich taste and buttery texture." },
-    { name: "Skipjack Tuna (స్కిప్‌జాక్ ట్యూనా)", desc: "Wild-caught skipjack tuna, lean, flavourful and protein-rich." },
-    { name: "Mackerel (కానగడ)", desc: "Omega-3 rich coastal favourite with bold, delicious flavour." },
-    { name: "Goatfish (మేక చేప)", desc: "Fresh sea goatfish with tender meat and authentic coastal taste." },
-    { name: "Red Mullet (ఎర్ర మేక చేప)", desc: "Premium red mullet, mildly sweet with a delicate, flaky texture." },
-    { name: "Seer Fish (వంజరం)", desc: "Coastal classic with firm, boneless meat and rich flavour." },
-    { name: "Salmon Fish (సాల్మన్ చేప)", desc: "Premium salmon with mild taste and buttery, flaky texture." },
-    { name: "Grouper (గ్రూపర్)", desc: "Fresh reef-caught grouper, thick fillets and exceptional flavour." },
-    { name: "White Prawns (తెల్ల రొయ్యలు)", desc: "Farm-fresh and wild-caught prawns, from small to jumbo sizes." },
-    { name: "Apollo Fish (అపోలో ఫిష్)", desc: "Fresh boneless fish, perfect for making the famous Andhra Apollo Fish dish." },
-    { name: "Tiger Prawns (టైగర్ రొయ్యలు)", desc: "Large premium tiger prawns with juicy, succulent meat." }
-        ];
-        const fishGrid = document.getElementById("fish-grid");
-        FISH_LIST.forEach((f, i) => {
-            const img = FISH_IMAGES[i % FISH_IMAGES.length];
-            const card = document.createElement("article");
-            card.className = "fish-card";
-            card.setAttribute("data-testid", `fish-card-${i + 1}`);
-            card.innerHTML = `
-                <div class="fish-media">
-                    <img loading="lazy" src="${img}?auto=format&fit=crop&w=700&q=75" alt="${f.name} - fresh seafood" />
-                    <span class="fresh-badge"><i class="fa-solid fa-leaf"></i> Fresh</span>
-                </div>
-                <div class="fish-body">
-                    <h3>${f.name}</h3>
-                    <p>${f.desc}</p>
-                    <a class="fish-cta" href="https://wa.me/919701744317?text=${encodeURIComponent('Hi, I want to order ' + f.name + '. Please share details.')}" target="_blank" rel="noopener" data-testid="fish-cta-${i + 1}">
-                        Enquire <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>`;
-            fishGrid.appendChild(card);
-        });
+const FISH_LIST = [
+{name:"Black Pomfret (నల్ల చందువా)",desc:"Premium black pomfret with soft, flaky meat and rich flavour."},
+{name:"White Pomfret (తెల్ల చందువా)",desc:"Restaurant-grade white pomfret, prized for its delicate texture."},
+{name:"Yellowfin Tuna (ఎల్లోఫిన్ ట్యూనా)",desc:"Fresh ocean catch with firm meat, perfect for steaks and grilling."},
+{name:"Yellowtail Kingfish (యెల్లోటెయిల్ కింగ్ ఫిష్)",desc:"Premium kingfish known for its rich taste and buttery texture."},
+{name:"Skipjack Tuna (స్కిప్‌జాక్ ట్యూనా)",desc:"Wild-caught skipjack tuna, lean, flavourful and protein-rich."},
+{name:"Mackerel (కానగడ)",desc:"Omega-3 rich coastal favourite with bold, delicious flavour."},
+{name:"Goatfish (మేక చేప)",desc:"Fresh sea goatfish with tender meat and authentic coastal taste."},
+{name:"Red Mullet (ఎర్ర మేక చేప)",desc:"Premium red mullet, mildly sweet with a delicate, flaky texture."},
+{name:"Seer Fish (వంజరం)",desc:"Coastal classic with firm, boneless meat and rich flavour."},
+{name:"Salmon Fish (సాల్మన్ చేప)",desc:"Premium salmon with mild taste and buttery, flaky texture."},
+{name:"Grouper (గ్రూపర్)",desc:"Fresh reef-caught grouper, thick fillets and exceptional flavour."},
+{name:"White Prawns (తెల్ల రొయ్యలు)",desc:"Farm-fresh and wild-caught prawns, from small to jumbo sizes."},
+{name:"Apollo Fish (అపోలో ఫిష్)",desc:"Fresh boneless fish, perfect for Andhra Apollo Fish."},
+{name:"Tiger Prawns (టైగర్ రొయ్యలు)",desc:"Large premium tiger prawns with juicy meat."}
+];
 
-        const HIGHLIGHTS = [
-            { icon: "fa-fish-fins", title: "Fresh Fish Every Day", desc: "New catch dispatched each morning." },
-                { icon: "fa-basket-shopping", title: "Retail Orders", desc: "Family-size to party-size packs." },
-            { icon: "fa-utensils", title: "Restaurant Supply", desc: "Consistent grade for chefs." },
-            { icon: "fa-hotel", title: "Hotel Supply", desc: "Contract supply for hotel kitchens." },
-            { icon: "fa-water", title: "Live Fish Availability", desc: "On-demand live catch." },
-            { icon: "fa-tags", title: "Affordable Pricing", desc: "Direct sourcing, no middlemen." },
-            { icon: "fa-shield-halved", title: "Quality Checked", desc: "Hygienic packing & cold-chain." },
-            { icon: "fa-headset", title: "24/7 Customer Support", desc: "WhatsApp & phone always on." }
-        ];
-        const hg = document.getElementById("highlights-grid");
-        HIGHLIGHTS.forEach((h, i) => {
-            const card = document.createElement("div");
-            card.className = "highlight-card reveal";
-            card.setAttribute("data-testid", `highlight-card-${i + 1}`);
-            card.innerHTML = `<div class="highlight-icon"><i class="fa-solid ${h.icon}"></i></div><h4>${h.title}</h4><p>${h.desc}</p>`;
-            hg.appendChild(card);
-        });
-    </script>
+const HIGHLIGHTS = [
+{icon:"fa-fish-fins",title:"Fresh Fish Every Day",desc:"New catch dispatched each morning."},
+{icon:"fa-basket-shopping",title:"Retail Orders",desc:"Family-size to party-size packs."},
+{icon:"fa-utensils",title:"Restaurant Supply",desc:"Consistent grade for chefs."},
+{icon:"fa-hotel",title:"Hotel Supply",desc:"Contract supply for hotel kitchens."},
+{icon:"fa-water",title:"Live Fish Availability",desc:"On-demand live catch."},
+{icon:"fa-tags",title:"Affordable Pricing",desc:"Direct sourcing, no middlemen."},
+{icon:"fa-shield-halved",title:"Quality Checked",desc:"Hygienic packing & cold-chain."},
+{icon:"fa-headset",title:"24/7 Customer Support",desc:"WhatsApp & phone always on."}
+];
+
+function buildFishCards(){
+
+const grid=document.getElementById("fish-grid");
+
+if(!grid) return;
+
+const frag=document.createDocumentFragment();
+
+FISH_LIST.forEach((f,i)=>{
+
+const card=document.createElement("article");
+
+card.className="fish-card";
+
+const img=FISH_IMAGES[i];
+
+card.innerHTML=`
+<div class="fish-media">
+<img
+loading="lazy"
+decoding="async"
+fetchpriority="low"
+src="${img}"
+alt="${f.name}">
+<span class="fresh-badge"><i class="fa-solid fa-leaf"></i> Fresh</span>
+</div>
+
+<div class="fish-body">
+<h3>${f.name}</h3>
+<p>${f.desc}</p>
+
+<a class="fish-cta"
+href="https://wa.me/919701744317?text=${encodeURIComponent("Hi, I want to order "+f.name)}"
+target="_blank"
+rel="noopener">
+Enquire
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>`;
+
+frag.appendChild(card);
+
+});
+
+grid.appendChild(frag);
+
+}
+
+function buildHighlights(){
+
+const grid=document.getElementById("highlights-grid");
+
+if(!grid) return;
+
+const frag=document.createDocumentFragment();
+
+HIGHLIGHTS.forEach(h=>{
+
+const card=document.createElement("div");
+
+card.className="highlight-card";
+
+card.innerHTML=`
+<div class="highlight-icon">
+<i class="fa-solid ${h.icon}"></i>
+</div>
+
+<h4>${h.title}</h4>
+
+<p>${h.desc}</p>`;
+
+frag.appendChild(card);
+
+});
+
+grid.appendChild(frag);
+
+}
+
+if("requestIdleCallback" in window){
+
+requestIdleCallback(()=>{
+
+buildFishCards();
+
+buildHighlights();
+
+});
+
+}else{
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+buildFishCards();
+
+buildHighlights();
+
+},300);
+
+});
+
+}
+</script>
 
     <script src="script.js"></script>
 </body>
