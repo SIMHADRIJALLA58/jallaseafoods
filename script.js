@@ -285,3 +285,23 @@ Please get in touch. Thank you!`;
     })();
 
 })();
+
+
+
+let ticking = false;
+
+window.addEventListener("scroll", function () {
+
+    if (!ticking) {
+
+        requestAnimationFrame(function () {
+
+            ticking = false;
+
+        });
+
+        ticking = true;
+
+    }
+
+}, { passive: true });

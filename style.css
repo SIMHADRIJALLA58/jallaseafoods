@@ -1386,3 +1386,18 @@ img,
     backface-visibility: hidden;
     will-change: transform;
 }
+
+.section{
+    content-visibility:auto;
+    contain-intrinsic-size:700px;
+}
+
+@media (prefers-reduced-motion: reduce){
+
+*{
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
+}
+
+}
