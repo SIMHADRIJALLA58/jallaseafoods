@@ -587,76 +587,26 @@
     { name: "Apollo Fish (అపోలో ఫిష్)", desc: "Fresh boneless fish, perfect for making the famous Andhra Apollo Fish dish." },
     { name: "Tiger Prawns (టైగర్ రొయ్యలు)", desc: "Large premium tiger prawns with juicy, succulent meat." }
         ];
-        // const fishGrid = document.getElementById("fish-grid");
-        // FISH_LIST.forEach((f, i) => {
-        //     const img = FISH_IMAGES[i % FISH_IMAGES.length];
-        //     const card = document.createElement("article");
-        //     card.className = "fish-card";
-        //     card.setAttribute("data-testid", `fish-card-${i + 1}`);
-        //     card.innerHTML = `
-        //         <div class="fish-media">
-        //             <img loading="lazy" src="${img}?auto=format&fit=crop&w=700&q=75" alt="${f.name} - fresh seafood" />
-        //             <span class="fresh-badge"><i class="fa-solid fa-leaf"></i> Fresh</span>
-        //         </div>
-        //         <div class="fish-body">
-        //             <h3>${f.name}</h3>
-        //             <p>${f.desc}</p>
-        //             <a class="fish-cta" href="https://wa.me/919701744317?text=${encodeURIComponent('Hi, I want to order ' + f.name + '. Please share details.')}" target="_blank" rel="noopener" data-testid="fish-cta-${i + 1}">
-        //                 Enquire <i class="fa-solid fa-arrow-right"></i>
-        //             </a>
-        //         </div>`;
-        //     fishGrid.appendChild(card);
-        // });
         const fishGrid = document.getElementById("fish-grid");
-
-let html = "";
-
-FISH_LIST.forEach((f, i) => {
-
-    html += `
-    <article class="fish-card">
-
-        <div class="fish-media">
-
-            <img
-                src="${FISH_IMAGES[i]}"
-                loading="lazy"
-                decoding="async"
-                fetchpriority="low"
-                width="400"
-                height="400"
-                alt="${f.name}">
-
-            <span class="fresh-badge">
-                <i class="fa-solid fa-leaf"></i>
-                Fresh
-            </span>
-
-        </div>
-
-        <div class="fish-body">
-
-            <h3>${f.name}</h3>
-
-            <p>${f.desc}</p>
-
-            <a class="fish-cta"
-            href="https://wa.me/919701744317?text=${encodeURIComponent("Hi, I want to order "+f.name)}"
-            target="_blank">
-
-            Enquire
-            <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
-    </article>
-    `;
-
-});
-
-fishGrid.innerHTML = html;
+        FISH_LIST.forEach((f, i) => {
+            const img = FISH_IMAGES[i % FISH_IMAGES.length];
+            const card = document.createElement("article");
+            card.className = "fish-card";
+            card.setAttribute("data-testid", `fish-card-${i + 1}`);
+            card.innerHTML = `
+                <div class="fish-media">
+                    <img loading="lazy" src="${img}?auto=format&fit=crop&w=700&q=75" alt="${f.name} - fresh seafood" />
+                    <span class="fresh-badge"><i class="fa-solid fa-leaf"></i> Fresh</span>
+                </div>
+                <div class="fish-body">
+                    <h3>${f.name}</h3>
+                    <p>${f.desc}</p>
+                    <a class="fish-cta" href="https://wa.me/919701744317?text=${encodeURIComponent('Hi, I want to order ' + f.name + '. Please share details.')}" target="_blank" rel="noopener" data-testid="fish-cta-${i + 1}">
+                        Enquire <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>`;
+            fishGrid.appendChild(card);
+        });
 
         const HIGHLIGHTS = [
             { icon: "fa-fish-fins", title: "Fresh Fish Every Day", desc: "New catch dispatched each morning." },
