@@ -153,35 +153,48 @@
     })();
 
     /* ---------- FAQ Accordion ---------- */
-    (function faq() {
-        document.querySelectorAll(".faq-item").forEach((item) => {
-            const q = item.querySelector(".faq-q");
-            if (!q) return;
-            q.addEventListener("click", () => {
-                const openItem = document.querySelector(".faq-item.open");
-                if (openItem && openItem !== item) openItem.classList.remove("open");
-                item.classList.toggle("open");
-            });
-        });
-    })();
+  (function () {
 
-    /* ---------- Reveal on scroll ---------- */
-    (function reveal() {
-        const els = document.querySelectorAll(".reveal");
-        if (!els.length) return;
-        const io = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((e) => {
-                    if (e.isIntersecting) {
-                        e.target.classList.add("in");
-                        io.unobserve(e.target);
-                    }
-                });
-            },
-            { threshold: 0.14 }
-        );
-        els.forEach((el) => io.observe(el));
-    })();
+const list=document.querySelector(".faq-list");
+
+if(!list) return;
+
+list.addEventListener("click",function(e){
+
+const btn=e.target.closest(".faq-q");
+
+if(!btn) return;
+
+const item=btn.parentElement;
+
+const opened=list.querySelector(".faq-item.open");
+
+if(opened && opened!==item){
+opened.classList.remove("open");
+}
+
+item.classList.toggle("open");
+
+});
+
+})();
+    // /* ---------- Reveal on scroll ---------- */
+    // (function reveal() {
+    //     const els = document.querySelectorAll(".reveal");
+    //     if (!els.length) return;
+    //     const io = new IntersectionObserver(
+    //         (entries) => {
+    //             entries.forEach((e) => {
+    //                 if (e.isIntersecting) {
+    //                     e.target.classList.add("in");
+    //                     io.unobserve(e.target);
+    //                 }
+    //             });
+    //         },
+    //         { threshold: 0.14 }
+    //     );
+    //     els.forEach((el) => io.observe(el));
+    // })();
 
     /* ---------- AOS init ---------- */
     // if (typeof AOS !== "undefined") {

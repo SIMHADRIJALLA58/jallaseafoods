@@ -1461,3 +1461,76 @@ img,
 }
 
 }
+
+
+
+
+
+/* =========================================================
+   FAQ PERFORMANCE FIX
+   Paste at the bottom of style.css
+   ========================================================= */
+
+.why-section{
+    contain:layout paint;
+    content-visibility:auto;
+    contain-intrinsic-size:700px;
+}
+
+/* Remove expensive blur */
+.faq-item{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+
+    transform:translateZ(0);
+    backface-visibility:hidden;
+    overflow:hidden;
+}
+
+/* Faster transition */
+.faq-q{
+    transition:background .25s ease;
+}
+
+.faq-item.open .faq-q{
+    background:rgba(255,255,255,.05);
+}
+
+/* Remove will-change */
+.faq-a{
+    max-height:0;
+    overflow:hidden;
+
+    padding:0 22px;
+
+    opacity:0;
+
+    transition:
+        max-height .28s ease,
+        opacity .22s ease,
+        padding .22s ease;
+}
+
+.faq-item.open .faq-a{
+    max-height:180px;
+    padding:0 22px 18px;
+    opacity:1;
+}
+
+/* Disable hover effects on mobile */
+@media (max-width:768px){
+
+.faq-item,
+.faq-q,
+.faq-a{
+    transition:none;
+}
+
+.faq-item.open .faq-a{
+    max-height:none;
+    opacity:1;
+}
+
+}
